@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasm-Video Boshqaruvchisi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rasm-Video Boshqaruvchisi</h1>
+            <p>Android ilovangiz uchun rasmlar va videolarni boshqaring</p>
+        </header>
+
+        <main>
+            <!-- Yuklash formasi -->
+            <section class="upload-section">
+                <h2>Yangi Rasm-Video Juftligini Qo'shish</h2>
+                <form id="upload-form">
+                    <div class="form-group">
+                        <label for="pair-name">Nom:</label>
+                        <input type="text" id="pair-name" placeholder="Juftlik nomi" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="image-upload">Rasm:</label>
+                            <input type="file" id="image-upload" accept="image/*" required>
+                            <div id="image-preview" class="preview"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="video-upload">Video:</label>
+                            <input type="file" id="video-upload" accept="video/*" required>
+                            <div id="video-preview" class="preview"></div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn primary">Saqlash</button>
+                </form>
+            </section>
+
+            <!-- Qidiruv va ro'yxat -->
+            <section class="list-section">
+                <div class="search-bar">
+                    <h2>Saqlangan Juftliklar</h2>
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Qidirish...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div id="pairs-list" class="pairs-list">
+                    <!-- Juftliklar shu yerda ko'rsatiladi -->
+                    <div class="empty-message">Hozircha hech qanday juftlik yo'q</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Rasm-Video Boshqaruvchisi</p>
+        </footer>
+    </div>
+
+    <!-- Tahrirlash modali -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Juftlikni Tahrirlash</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                
+                <div class="form-group">
+                    <label for="edit-name">Nom:</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-image">Rasm (ixtiyoriy):</label>
+                        <input type="file" id="edit-image" accept="image/*">
+                        <div id="edit-image-preview" class="preview"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-video">Video (ixtiyoriy):</label>
+                        <input type="file" id="edit-video" accept="video/*">
+                        <div id="edit-video-preview" class="preview"></div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn primary">Yangilash</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Xabar bildirish -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
